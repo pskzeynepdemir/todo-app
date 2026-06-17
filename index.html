@@ -7,16 +7,35 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app">
+  <!-- Giriş / kayıt ekranı -->
+  <div class="app" id="auth-view" hidden>
     <h1>Yapılacaklar</h1>
+    <p class="subtitle" id="auth-subtitle">Devam etmek için giriş yap</p>
+
+    <form id="auth-form" class="auth-form">
+      <input type="email" id="email" placeholder="E-posta" autocomplete="email" required />
+      <input type="password" id="password" placeholder="Parola (en az 6 karakter)" autocomplete="current-password" minlength="6" required />
+      <button type="submit" id="auth-submit">Giriş yap</button>
+    </form>
+
+    <p class="auth-toggle">
+      <span id="auth-toggle-text">Hesabın yok mu?</span>
+      <button type="button" id="auth-toggle-btn">Kayıt ol</button>
+    </p>
+
+    <p class="auth-message" id="auth-message"></p>
+  </div>
+
+  <!-- Uygulama ekranı -->
+  <div class="app" id="app-view" hidden>
+    <div class="topbar">
+      <h1>Yapılacaklar</h1>
+      <button id="logout" class="logout">Çıkış</button>
+    </div>
+    <p class="subtitle" id="user-email"></p>
 
     <form id="todo-form" class="input-row">
-      <input
-        type="text"
-        id="todo-input"
-        placeholder="Yeni bir görev ekle..."
-        autocomplete="off"
-      />
+      <input type="text" id="todo-input" placeholder="Yeni bir görev ekle..." autocomplete="off" />
       <button type="submit">Ekle</button>
     </form>
 
@@ -34,6 +53,11 @@
     </div>
   </div>
 
+  <!-- Yükleniyor durumu -->
+  <div class="app loading" id="loading-view">Yükleniyor…</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
