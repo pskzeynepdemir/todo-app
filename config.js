@@ -3,6 +3,6 @@
 // anon (public) key'in frontend'de görünmesi normaldir; gizli değildir.
 // Güvenliği Row Level Security politikaları sağlar.
 window.SUPABASE_CONFIG = {
-  url: "BURAYA_PROJECT_URL", // örn: https://abcdefgh.supabase.co
-  anonKey: "BURAYA_ANON_PUBLIC_KEY",
+  url: "https://njazqnhzoylcekahjzvo.supabase.co",
+  anonKey: "sb_publishable_VqNdm78OAGKxyCCACxT3iA_iFwdHNU-",
 };
