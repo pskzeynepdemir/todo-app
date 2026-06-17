@@ -26,31 +26,26 @@
     <p class="auth-message" id="auth-message"></p>
   </div>
 
-  <!-- Uygulama ekranı -->
-  <div class="app" id="app-view" hidden>
-    <div class="topbar">
-      <h1>Yapılacaklar</h1>
-      <button id="logout" class="logout">Çıkış</button>
-    </div>
-    <p class="subtitle" id="user-email"></p>
+  <!-- Uygulama ekranı (kanban panosu) -->
+  <div id="app-view" hidden>
+    <header class="board-header">
+      <div class="board-title">
+        <h1>Yapılacaklar</h1>
+        <span class="subtitle" id="user-email"></span>
+      </div>
+      <div class="board-tools">
+        <div class="filters">
+          <button class="filter active" data-filter="all">Tümü</button>
+          <button class="filter" data-filter="active">Aktif</button>
+          <button class="filter" data-filter="completed">Tamamlanan</button>
+        </div>
+        <button id="logout" class="logout">Çıkış</button>
+      </div>
+    </header>
 
-    <form id="todo-form" class="input-row">
-      <input type="text" id="todo-input" placeholder="Yeni bir görev ekle..." autocomplete="off" />
-      <button type="submit">Ekle</button>
-    </form>
+    <div class="board" id="board"></div>
 
-    <div class="filters">
-      <button class="filter active" data-filter="all">Tümü</button>
-      <button class="filter" data-filter="active">Aktif</button>
-      <button class="filter" data-filter="completed">Tamamlanan</button>
-    </div>
-
-    <ul id="todo-list"></ul>
-
-    <div class="footer">
-      <span id="count">0 görev</span>
-      <button id="clear-completed">Tamamlananları temizle</button>
-    </div>
+    <!-- Kart ve sütun şablonları JS tarafından kullanılır -->
   </div>
 
   <!-- Yükleniyor durumu -->
